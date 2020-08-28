@@ -1,10 +1,11 @@
 <div>
 
   <h1>All Articles</h1>
+  <h2><%=link_to "New Article" , new_article_path %> </h2>
   <ul id="articles">
     <%@articles.each do |article| %>
       <li>
-    <%=link_to article.title,article_path(article)%></li>
+        <div><%=link_to article.title,article_path(article)%> <%= link_to "delete", article_path(article), method: :delete, data: {confirm: "Really delete this article?" }%> <%= link_to "edit", edit_article_path(article) %><div></li>
   <% end %> 
   </ul>
 
